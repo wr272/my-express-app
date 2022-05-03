@@ -7,9 +7,9 @@ var logger = require('morgan');
 var expressLayouts = require('express-ejs-layouts'); // around line 6
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var stocksRouter = require('./routes/stocks') // around line 12
 
 var app = express();
-var stocksRouter = require('./routes/stocks') // around line 12
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -23,9 +23,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressLayouts); // around new line 22
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/stocks', stocksRouter) // around line 29
 
 // catch 404 and forward to error handler
-app.use('/stocks', stocksRouter) // around line 29
 app.use(function(req, res, next) {
   next(createError(404));
 });
