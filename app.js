@@ -13,6 +13,7 @@ var stocksRouter = require('./routes/stocks') // around line 12
 
 
 var app = express();
+var productsRouter = require('./routes/products'); // around line 15
 var SESSION_SECRET = process.env.SESSION_SECRET || "super secret" // around line 16 (before app initialization)
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,6 +39,7 @@ app.use(session({
 }));
 app.use(flash())
 
+app.use('/products', productsRouter); // around line 43
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
