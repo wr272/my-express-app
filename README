@@ -1,8 +1,17 @@
 Include written instructions in the repo's README file to tell someone else how to download your code, setup the app, run the app locally, and deploy it. 
 If connecting to third-party APIs or back-end databases, include instructions for how to set up the database, obtain credentials, etc.
 
-In order to download the code, navigate to https://github.com/wr272/my-express-app and make a copy of this template repo by cloning your copy of the repo onto your local machine.
-alphadvantage API
-Firestore
-Google Cloud API
+This is a web application starter template that was created in Node.js with the Express framework and users can use this as a guide to get started. By the end of this README file, users will be able to login with their Google accounts (via OAuth) and interface with a Google Cloud Firestore database.
+
+To download the code, navigate to https://github.com/wr272/my-express-app and clone your copy of the repo onto your local machine.
+
+Install packages using "npm install" and the nodemon development server using "npm install nodemon -g"
+
+Next, the app requires a few services for user authentication and data storage. There are instructions below that will help setup these services.
+
+AlphaVantage API
+To obtain a premium key, navigate to this link: https://www.alphavantage.co/support/#api-key
+
+Google Cloud Firestore Database
 Google Passport Auth
+Alphadvantage API
