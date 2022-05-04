@@ -1,4 +1,5 @@
 require('dotenv').config(); // new line 1
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -7,6 +8,9 @@ var logger = require('morgan');
 var expressLayouts = require('express-ejs-layouts'); // around line 6
 var session = require('express-session') // around line 9
 var flash = require('express-flash-messages') // around line 10
+
+var passport = require('./services/passport-auth');
+var authRouterConfig = require('./routes/auth');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -37,6 +41,12 @@ app.use(session({
   saveUninitialized: true
 }));
 app.use(flash())
+app.use(passport.initialize());
+app.use(passport.session());
+
+// routes
+var authRouter = authRouterConfig(passport) // need to pass passport after the initialization step above
+app.use('/', authRouter);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
