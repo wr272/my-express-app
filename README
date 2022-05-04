@@ -1,4 +1,8 @@
-Include written instructions in the repo's README file to tell someone else how to download your code, 
-setup the app, run the app locally, and deploy it. 
+Include written instructions in the repo's README file to tell someone else how to download your code, setup the app, run the app locally, and deploy it. 
 If connecting to third-party APIs or back-end databases, include instructions for how to set up the database, obtain credentials, etc.
 
+In order to download the code, navigate to https://github.com/wr272/my-express-app and make a copy of this template repo by cloning your copy of the repo onto your local machine.
+alphadvantage API
+Firestore
+Google Cloud API
+Google Passport Auth
