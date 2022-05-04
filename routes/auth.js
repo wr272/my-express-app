@@ -14,7 +14,7 @@ var authRouterConfig = function(passport) {
 
     router.get('/auth/google/callback',
         passport.authenticate('google', {
-            successRedirect: '/user/profile',
+            successRedirect: '/users/profile',
             failureRedirect: '/auth/google/failure'
         })
     );
@@ -40,7 +40,7 @@ var authRouterConfig = function(passport) {
         // even if there is no user, so the page can check accordingly
         // h/t: https://stackoverflow.com/questions/37183766/how-to-get-the-session-value-in-ejs
         //res.locals.user = req.session.user;
-        res.locals.users = req.users; // in this case we are storing as req.user
+        res.locals.user = req.user; // in this case we are storing as req.user
         next();
     });
 

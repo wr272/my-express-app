@@ -6,7 +6,7 @@ const {fetchUserOrders, createOrder} = require("../services/firestore-service")
 var router = express.Router();
 
 router.get('/users/profile', isLoggedIn, (req, res) => {
-  console.log("USERS:", req.users)
+  console.log("USERS:", req.user)
   //> {
   //>   provider: 'google',
   //>   sub: '...',
@@ -31,17 +31,17 @@ router.get('/users/profile', isLoggedIn, (req, res) => {
   //> }
   //console.log(req.user.email, req.user.displayName, req.user.picture)
 
-  res.render("users_profile", {users: req.users})
+  res.render("user_profile", {users: req.user})
 });
 
 
 router.get('/users/orders', isLoggedIn, async (req, res) => {
-  var email = req.users.email
+  var email = req.user.email
   console.log("USERS ORDERS...", email)
 
   try {
       var orders = await fetchUserOrders(email)
-      res.render("user_orders", {users: req.users, orders: orders})
+      res.render("user_orders", {users: req.user, orders: orders})
   } catch (error) {
       console.log("ERR:", error)
       req.flash("danger", "OOPS, failed to fetch orders.")
@@ -51,7 +51,7 @@ router.get('/users/orders', isLoggedIn, async (req, res) => {
 
 
 router.post('/users/orders/create', isLoggedIn, async (req, res) => {
-  var email = req.users.email
+  var email = req.user.email
   console.log("CREATE ORDER...", email)
 
   var formData = req.body

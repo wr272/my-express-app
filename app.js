@@ -49,7 +49,7 @@ var authRouter = authRouterConfig(passport) // need to pass passport after the i
 app.use('/', authRouter);
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', usersRouter);
 app.use('/stocks', stocksRouter) // around line 29
 app.use('/', productsRouter); // around line 43
 

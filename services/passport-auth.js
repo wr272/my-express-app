@@ -3,7 +3,7 @@ const GoogleStrategy = require('passport-google-oauth2').Strategy;
 
 var GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || "OOPS"
 var GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || "OOPS"
-var GOOGLE_CALLBACK_URL = process.env.GOOGLE_CALLBACK_URL || "https://pats-psls-2.herokuapp.com/google/callback"
+var GOOGLE_CALLBACK_URL = process.env.GOOGLE_CALLBACK_URL || "http://localhost:3000/auth/google/callback"
 // ... set the callback url to "https://YOUR_APP.herokuapp.com/auth/google/callback" in production
 
 passport.use(new GoogleStrategy({
