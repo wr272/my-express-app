@@ -22,7 +22,7 @@
                     <h5 class="card-title"><%= product["name"] %></h5>
                     <p class="card-text"><%= product["description"] %></p>
 
-                    <form action="/orders" method="POST">
+                    <form action="/users/orders/create" method="POST">
                         <input type="hidden" name="productId" value="<%= product['id'] %>">
                         <input type="hidden" name="productName" value="<%= product['name'] %>">
                         <input type="hidden" name="productPrice" value="<%= product['price'] %>">

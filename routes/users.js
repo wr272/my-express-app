@@ -58,11 +58,11 @@ router.post('/users/orders/create', isLoggedIn, async (req, res) => {
   console.log("FORM DATA:", formData)
 
   var productInfo = {
-      "id": formData["product_id"],
-      "name": formData["product_name"],
-      "description": formData["product_description"],
-      "price": formData["product_price"],
-      "url": formData["product_url"],
+      "id": formData["productId"],
+      "name": formData["productName"],
+      //"description": formData["product_description"],
+      "price": formData["productPrice"],
+      //"url": formData["product_url"],
   }
   console.log("PRODUCT INFO:", productInfo)
 
